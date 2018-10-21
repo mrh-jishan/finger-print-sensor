@@ -8,7 +8,7 @@ All rights reserved.
 
 """
 
-from pyfingerprint.pyfingerprint import PyFingerprint
+import pyfingerprint
 
 
 ## Deletes a finger from sensor
@@ -17,7 +17,7 @@ from pyfingerprint.pyfingerprint import PyFingerprint
 
 ## Tries to initialize the sensor
 try:
-    f = PyFingerprint('/dev/ttyUSB0', 57600, 0xFFFFFFFF, 0x00000000)
+    f = pyfingerprint.PyFingerprint('/dev/ttyUSB0', 57600, 0xFFFFFFFF, 0x00000000)
 
     if ( f.verifyPassword() == False ):
         raise ValueError('The given fingerprint sensor password is wrong!')
